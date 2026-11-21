@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>WCTR 2026 Procedia Status</title>
+<meta name="description" content="Check the status of your WCTR 2026 paper for Transportation Research Procedia.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}*{box-sizing:border-box}
+/* Layout: one reading column. Lookup first, then the issue at a glance, then what to send and how the process runs. */
+:root{
+  --bg:#F5F7F8; --surface:#FFFFFF; --ink:#14232B; --muted:#55666F; --line:#D6DEE2;
+  --accent:#0A6C74; --accent-ink:#FFFFFF; --accent-soft:#E2F1F2;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA; --warn:#9A5B00; --warn-soft:#FBEED6; --stop:#A8322B; --stop-soft:#F9E4E2; --idle:#4E5F68; --idle-soft:#E8EDEF;
+  --display:"Space Grotesk","Inter",system-ui,sans-serif; --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0F181C; --surface:#172329; --ink:#E6EEF1; --muted:#9DB0B9; --line:#2B3B43;
+  --accent:#5CC4CB; --accent-ink:#06282B; --accent-soft:#143338;
+  --ok:#6FD39E; --ok-soft:#153526; --warn:#F0B95A; --warn-soft:#3A2C10; --stop:#F0918A; --stop-soft:#3D1B19; --idle:#A9BAC2; --idle-soft:#22313A; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0F181C; --surface:#172329; --ink:#E6EEF1; --muted:#9DB0B9; --line:#2B3B43;
+  --accent:#5CC4CB; --accent-ink:#06282B; --accent-soft:#143338;
+  --ok:#6FD39E; --ok-soft:#153526; --warn:#F0B95A; --warn-soft:#3A2C10; --stop:#F0918A; --stop-soft:#3D1B19; --idle:#A9BAC2; --idle-soft:#22313A; color-scheme:dark }
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:46rem;margin:0 auto;padding-block:2.5rem 4rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:2.75rem}
+header{display:flex;flex-direction:column;gap:.6rem}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.15;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-weight:600;font-size:1.25rem;line-height:1.25;margin:0;text-wrap:balance}
+p{margin:0}
+.lede{color:var(--muted);max-width:38rem}
+.updated{font-size:.875rem;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:1rem}
+.lookup{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.25rem;display:flex;flex-direction:column;gap:1rem}
+.lookup label{font-weight:600}
+.row{display:flex;gap:.6rem;flex-wrap:wrap}
+input[type=text]{flex:1 1 12rem;min-width:0;font-family:var(--mono);font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;padding:.7rem .85rem;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+input[type=text]::placeholder{color:var(--muted);opacity:.7}
+button{font:inherit;font-weight:600;padding:.7rem 1.2rem;border-radius:8px;border:1.5px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer}
+button.ghost{background:transparent;color:var(--accent);padding:.35rem .7rem;font-size:.875rem}
+input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.hint{font-size:.875rem;color:var(--muted)}
+.result{border-top:1px solid var(--line);padding-top:1rem;display:flex;flex-direction:column;gap:.6rem}
+.pill{display:inline-flex;align-items:center;gap:.45rem;align-self:flex-start;font-weight:600;font-size:.9rem;padding:.3rem .7rem;border-radius:999px}
+.pill::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:currentColor}
+.t-ok{color:var(--ok);background:var(--ok-soft)} .t-warn{color:var(--warn);background:var(--warn-soft)} .t-stop{color:var(--stop);background:var(--stop-soft)} .t-idle{color:var(--idle);background:var(--idle-soft)} .t-wait{color:var(--accent);background:var(--accent-soft)}
+.result h3{font-family:var(--display);font-size:1.1rem;margin:0;font-weight:600}
+.pid{font-family:var(--mono);font-size:.95rem;color:var(--muted)}
+.glance{display:grid;gap:.55rem}
+.bar{display:grid;grid-template-columns:minmax(9rem,14rem) 1fr 3ch;gap:.75rem;align-items:center;font-size:.95rem}
+.bar .track{height:.6rem;border-radius:999px;background:var(--idle-soft);overflow:hidden}
+.bar .fill{height:100%;border-radius:999px}
+.bar .n{font-variant-numeric:tabular-nums;text-align:right;font-weight:600}
+.f-wait{background:var(--accent)} .f-warn{background:var(--warn)} .f-ok{background:var(--ok)} .f-idle{background:var(--idle)} .f-stop{background:var(--stop)}
+ol.steps{margin:0;padding-left:1.3rem;display:flex;flex-direction:column;gap:.55rem}
+ol.steps li::marker{font-weight:600;color:var(--accent)}
+.now{font-size:.78rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-left:.4rem}
+dl.facts{margin:0;display:grid;grid-template-columns:minmax(7rem,11rem) 1fr;gap:.6rem 1rem}
+dl.facts dt{color:var(--muted);font-size:.95rem} dl.facts dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.addr{font-family:var(--mono);font-size:.95rem;user-select:all}
+a{color:var(--accent)}
+details{border-top:1px solid var(--line);padding-block:.8rem} details:last-of-type{border-bottom:1px solid var(--line)}
+summary{font-weight:600;cursor:pointer} details p{margin-top:.5rem;color:var(--muted);max-width:38rem}
+footer{font-size:.875rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1.25rem}
+@media (max-width:30rem){ .bar{grid-template-columns:1fr 3ch} .bar .track{grid-column:1 / -1;order:3} dl.facts{grid-template-columns:1fr;gap:.15rem} dl.facts dd{margin-bottom:.6rem} }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Transportation Research Procedia · WCTR 2026 Toulouse</p>
+    <h1>Where is my Procedia paper?</h1>
+    <p class="lede">Enter your paper number to see what the editorial team has on file for it and whether anything is needed from you.</p>
+    <p class="updated">Last updated 21 November 2026. Files received after that date are not reflected yet.</p>
+  </header>
+
+  <section class="lookup" aria-labelledby="lk">
+    <label id="lk" for="pid">Paper number</label>
+    <form id="form" class="row" novalidate>
+      <input type="text" id="pid" name="pid" placeholder="A12345AB" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="10" aria-describedby="pidhint">
+      <button type="submit" id="go">Check status</button>
+    </form>
+    <p class="hint" id="pidhint">The number starts with A, followed by five digits and two letters. It is in the subject line of every email we sent you.</p>
+    <div class="result" id="result" aria-live="polite" hidden></div>
+  </section>
+
+  <section aria-labelledby="g">
+    <h2 id="g">The issue at a glance</h2>
+    <p class="lede">525 papers are currently in the Procedia process.</p>
+    <div class="glance" id="glance"></div>
+  </section>
+
+  <section aria-labelledby="w">
+    <h2 id="w">What to send</h2>
+    <dl class="facts">
+      <dt>Deadline</dt><dd><strong>Friday, 27 November 2026</strong></dd>
+      <dt>Manuscript</dt><dd>Camera-ready, in the Procedia template, as PDF plus the Word or LaTeX source.</dd>
+      <dt>Page limit</dt><dd><strong>10 pages</strong>, including references, figures and tables.</dd>
+      <dt>Response to reviewers</dt><dd>A point-by-point document explaining how the comments were addressed.</dd>
+      <dt>Template</dt><dd><a href="https://wctr2026.europa-inviteo.com/callfor/">wctr2026.europa-inviteo.com/callfor</a></dd>
+      <dt>Send to</dt><dd><span class="addr" id="addr">fusun.ulengin@sabanciuniv.edu</span> <button type="button" class="ghost" id="copy">Copy</button><br><span class="hint">Reply to the email you received, and keep your paper number in the subject line and file names.</span></dd>
+    </dl>
+  </section>
+
+  <section aria-labelledby="p">
+    <h2 id="p">How the process runs</h2>
+    <ol class="steps">
+      <li>Authors send the final manuscript and the response to reviewers. <span class="now">We are here</span></li>
+      <li>The editorial team checks each paper against the template and the 10-page limit, and writes to authors only if something needs correcting.</li>
+      <li>The complete issue is transferred to Elsevier in one package.</li>
+      <li>Elsevier typesets the papers and contacts corresponding authors directly for proofs.</li>
+      <li>The issue is published online in Transportation Research Procedia.</li>
+    </ol>
+    <p class="hint">Elsevier has not yet confirmed a publication date. It will be posted here as soon as it is known.</p>
+  </section>
+
+  <section aria-labelledby="q">
+    <h2 id="q">Common questions</h2>
+    <div>
+      <details><summary>I sent my files but the page says you are waiting for them.</summary><p>This page is updated in batches, so recent emails may not be counted yet. If your files were sent before the date at the top of the page, please resend them in reply to our email, with the paper number in the subject line.</p></details>
+      <details><summary>My paper is longer than 10 pages. Can it still be published?</summary><p>Only in a version of 10 pages or fewer in the Procedia template. Elsevier does not accept longer papers for this issue. Please send the shortened version by the deadline.</p></details>
+      <details><summary>Do I need a new response to reviewers if I only shorten the paper?</summary><p>No. A new response is needed only if the content changes or if we told you that we do not have one on file.</p></details>
+      <details><summary>My paper number is not found.</summary><p>The page lists only papers that are in the Procedia process. Papers invited to a journal special issue are handled by the chair of the Special Interest Group. If you believe your paper should be here, write to the address above with your paper number.</p></details>
+      <details><summary>I have decided to publish elsewhere.</summary><p>Please send a one-line email saying so, with your paper number, so that we can close your file.</p></details>
+      <details><summary>When will I receive proofs, a DOI or an acceptance letter?</summary><p>Proofs and the DOI come from Elsevier after the issue has been transferred. The editorial team cannot issue them earlier.</p></details>
+    </div>
+  </section>
+
+  <footer>Maintained by the editorial team of the WCTR 2026 issue of Transportation Research Procedia. Only paper numbers and their status are shown here; no author names or titles.</footer>
+</div>
+
+<script>
+const DATA = {"A78539TI":"shorten","A83541GW":"shorten","A83961VS":"shorten","A84118TS":"shorten","A84425SV":"checking","A85095MD":"shorten","A85130AC":"shorten","A85606MH":"shorten","A85686JR":"complete","A85911YM":"complete","A86140JL":"complete","A88126AA":"shorten","A88636AL":"shorten","A88995CD":"shorten","A89227PK":"shorten","A89483CD":"shorten","A90411BP":"complete","A90425JM":"shorten","A90706MY":"shorten","A75056LM":"shorten","A84528IB":"shorten","A84981MR":"checking","A74113AC":"shorten","A74518PC":"shorten","A76191DT":"shorten","A76316MT":"shorten","A76606HP":"shorten","A76855MB":"shorten","A80293AA":"shorten","A82762ZC":"shorten","A83128YA":"shorten","A83286MC":"shorten","A83357AE":"shorten","A83480VS":"shorten","A83547TM":"complete","A83548LL":"shorten","A83660CP":"shorten","A83743KN":"shorten","A83755VM":"shorten","A83890HM":"shorten","A84082MS":"shorten","A84250MH":"complete","A84535AD":"shorten","A84703MG":"shorten","A84715SP":"shorten","A84746PB":"checking","A84880CB":"shorten","A84906SS":"shorten","A84986AB":"shorten","A85172HB":"complete","A85176LS":"shorten","A85187CP":"shorten","A85402NJ":"shorten","A85560MK":"shorten","A85600AL":"shorten","A85735AD":"shorten","A85788FG":"shorten","A85803CI":"shorten","A85888LG":"checking","A85942AV":"shorten","A85955TY":"shorten","A86027NA":"checking","A86087LA":"shorten","A86285SB":"shorten","A86437MZ":"shorten","A88456JM":"shorten","A88590TT":"shorten","A88666LM":"shorten","A88855JL":"shorten","A89056PK":"shorten","A89096JA":"shorten","A89148VW":"shorten","A89200KT":"shorten","A89292AK":"shorten","A89566SA":"checking","A89838JB":"complete","A89853NT":"complete","A89996GM":"complete","A90027SS":"complete","A90176RK":"shorten","A90203RA":"shorten","A90298JB":"shorten","A90635SM":"shorten","A90665CM":"complete","A90668KA":"shorten","A90858QD":"complete","A75863MD":"checking","A76035QL":"checking","A76951XC":"checking","A88408SB":"checking","A88695JI":"checking","A75031JM":"shorten_noresp","A76529PW":"shorten","A77400MN":"pending","A83091JL":"shorten","A85011AB":"shorten_noresp","A85737AS":"complete","A85946NH":"shorten","A86252DB":"shorten","A89222SD":"shorten_noresp","A90477BL":"shorten_noresp","A74843TR":"shorten_noresp","A75805JB":"shorten_noresp","A75973AP":"shorten","A80994MC":"shorten","A82796AB":"shorten_noresp","A83375TA":"shorten","A83780CR":"pending","A83882RA":"shorten","A84232ZH":"shorten","A85281AS":"shorten","A85318JB":"shorten_noresp","A85958TK":"shorten","A86046AA":"undelivered","A86263DL":"shorten_noresp","A86348SF":"complete","A86432CD":"shorten","A88187DD":"shorten","A88205TG":"complete","A88361NB":"shorten","A88772FF":"shorten","A88823AE":"checking","A89057MN":"complete","A89243ES":"shorten","A89331SE":"shorten","A89447KS":"complete","A89556KH":"shorten_noresp","A89557CG":"shorten","A89880FR":"shorten_noresp","A90500MM":"shorten","A90640AK":"complete","A76333DM":"checking","A83942WM":"checking","A87652NM":"pending","A89220FB":"checking","A83496GN":"shorten","A86585HM":"shorten","A85053OR":"checking","A86308AD":"shorten","A90152SR":"shorten","A76686KU":"shorten","A84542FL":"checking","A85568TG":"complete","A86305BF":"shorten","A75868QY":"pending","A77346SH":"pending","A77989FL":"pending","A83193AC":"pending","A83412PV":"pending","A83981CD":"pending","A84066EG":"pending","A84077PJ":"pending","A85042GS":"pending","A85610OG":"pending","A85632NG":"pending","A85660MD":"pending","A85797KH":"pending","A85832RT":"pending","A85907AK":"pending","A86212ST":"complete","A86336NB":"pending","A86341NB":"pending","A86398MF":"pending","A87658DR":"pending","A88587SP":"pending","A88770LB":"pending","A89362CM":"pending","A89748JR":"pending","A90081MS":"pending","A90240MB":"shorten","A90390JA":"awaiting","A90470TM":"pending","A90473NZ":"pending","A90777GK":"pending","A84812EA":"withdrawn","A85836MM":"awaiting","A86363JP":"awaiting","A89051OO":"awaiting","A89788MY":"awaiting","A85382VK":"withdrawn","A74850MD":"awaiting","A75074OM":"awaiting","A76416MT":"awaiting","A76436LZ":"awaiting","A78098LZ":"awaiting","A81788BR":"undelivered","A82740MM":"awaiting","A83153PT":"awaiting","A83537AD":"awaiting","A83661YC":"withdrawn","A83853SH":"awaiting","A84025KT":"awaiting","A84467VS":"awaiting","A84512TY":"awaiting","A84937EM":"awaiting","A84946CF":"needresp","A85057LP":"awaiting","A85090NP":"awaiting","A85531AP":"awaiting","A85678OA":"awaiting","A85725YS":"awaiting","A85806IS":"pending","A85875PS":"withdrawn","A85902CL":"awaiting","A85921KS":"shorten","A85997JH":"awaiting","A86037PA":"awaiting","A86040TN":"awaiting","A86152PA":"awaiting","A86482AC":"withdrawn","A86488PP":"awaiting","A88166AB":"awaiting","A88841MH":"awaiting","A88918AC":"withdrawn","A89126VV":"awaiting","A89170SS":"awaiting","A89561MA":"awaiting","A89758BD":"awaiting","A89787DV":"withdrawn","A90108AV":"awaiting","A90148SB":"awaiting","A90181AA":"withdrawn","A90208MP":"withdrawn","A90542SK":"awaiting","A88070KG":"pending","A88172PA":"pending","A89163VA":"pending","A89475AA":"pending","A89615PV":"pending","A90028YL":"pending","A90323PA":"pending","A84060HQ":"awaiting","A73655MX":"awaiting","A74729SS":"awaiting","A74933BK":"awaiting","A75453HG":"awaiting","A75803YD":"awaiting","A75829YZ":"awaiting","A75873SK":"awaiting","A76116MK":"awaiting","A76174LM":"awaiting","A76224MJ":"awaiting","A76329AK":"awaiting","A76464AB":"awaiting","A76526LC":"awaiting","A76579FP":"awaiting","A76663TS":"awaiting","A76724VS":"awaiting","A77169WT":"awaiting","A77193BN":"awaiting","A77475?A":"awaiting","A77648BK":"undelivered","A78026JH":"awaiting","A79076AU":"awaiting","A79850AU":"awaiting","A81810PT":"awaiting","A81934MP":"awaiting","A81999TF":"awaiting","A82735YU":"awaiting","A83113JP":"awaiting","A83150SM":"awaiting","A83215JA":"awaiting","A83231AS":"awaiting","A83317JM":"awaiting","A83441IL":"awaiting","A83447SR":"awaiting","A83503PK":"awaiting","A83546JM":"awaiting","A83576OA":"awaiting","A83638SK":"awaiting","A83667TO":"awaiting","A83672AB":"awaiting","A83681YM":"awaiting","A83756SS":"awaiting","A83791ZG":"awaiting","A83856NR":"awaiting","A83901DO":"awaiting","A83931MS":"awaiting","A83936NP":"awaiting","A83957PP":"awaiting","A83973YL":"awaiting","A84008EC":"awaiting","A84126LG":"awaiting","A84135AP":"awaiting","A84155XY":"awaiting","A84236HH":"awaiting","A84300KM":"awaiting","A84312SJ":"awaiting","A84327SG":"awaiting","A84368TB":"awaiting","A84375SJ":"awaiting","A84378WP":"undelivered","A84451VS":"awaiting","A84461WV":"awaiting","A84478HG":"awaiting","A84496KG":"awaiting","A84507AF":"awaiting","A84516ZX":"awaiting","A84523JG":"awaiting","A84565NP":"awaiting","A84583LM":"awaiting","A84615TS":"awaiting","A84657AF":"awaiting","A84693YO":"awaiting","A84702ML":"awaiting","A84742EM":"awaiting","A84751LD":"awaiting","A84768TI":"awaiting","A84776XZ":"awaiting","A84788JZ":"awaiting","A84802JW":"awaiting","A84827MS":"awaiting","A84856TB":"awaiting","A84885MI":"awaiting","A84907OG":"awaiting","A84920SV":"awaiting","A85023NN":"awaiting","A85040AD":"awaiting","A85060SN":"awaiting","A85132NW":"awaiting","A85151PB":"awaiting","A85232IS":"awaiting","A85241NH":"awaiting","A85245MA":"awaiting","A85305JK":"awaiting","A85313RR":"awaiting","A85328MS":"awaiting","A85341VM":"awaiting","A85347GL":"awaiting","A85377DK":"awaiting","A85436PS":"awaiting","A85443SW":"awaiting","A85448TS":"awaiting","A85466SZ":"awaiting","A85512YN":"awaiting","A85551RM":"awaiting","A85571FH":"awaiting","A85580BL":"awaiting","A85596HM":"awaiting","A85642NG":"awaiting","A85648MB":"awaiting","A85668LB":"awaiting","A85677EB":"awaiting","A85720SH":"awaiting","A85747FM":"awaiting","A85751WX":"awaiting","A85752PB":"awaiting","A85762SM":"awaiting","A85813GM":"awaiting","A85815SH":"awaiting","A85846AK":"awaiting","A85851SC":"awaiting","A85863TT":"awaiting","A85880SR":"awaiting","A85926JK":"awaiting","A85933YN":"awaiting","A85982AA":"awaiting","A86015SH":"awaiting","A86025GM":"awaiting","A86031?M":"awaiting","A86071MH":"awaiting","A86092HB":"awaiting","A86117IW":"awaiting","A86172CL":"awaiting","A86211BS":"awaiting","A86222NS":"awaiting","A86235FD":"awaiting","A86287PM":"awaiting","A86298JY":"awaiting","A86300PS":"awaiting","A86313TT":"awaiting","A86343SB":"awaiting","A86357AR":"awaiting","A86361SK":"awaiting","A86385AC":"awaiting","A86392YH":"awaiting","A86502HD":"awaiting","A86573AD":"awaiting","A86656KB":"awaiting","A86753SP":"awaiting","A87320LR":"awaiting","A87657JP":"awaiting","A87868JW":"awaiting","A88140LJ":"awaiting","A88146MM":"awaiting","A88257AF":"awaiting","A88313TB":"awaiting","A88318TT":"awaiting","A88375MS":"awaiting","A88442SI":"awaiting","A88532SI":"awaiting","A88537KK":"awaiting","A88542DT":"awaiting","A88580HL":"awaiting","A88600JP":"awaiting","A88618YH":"awaiting","A88646FG":"awaiting","A88675DJ":"awaiting","A88688LH":"awaiting","A88755SM":"awaiting","A88842VP":"awaiting","A88920AP":"awaiting","A88922AM":"awaiting","A88945YW":"awaiting","A88975WC":"awaiting","A88986HP":"awaiting","A89021BM":"awaiting","A89036YM":"awaiting","A89098MM":"awaiting","A89100JV":"awaiting","A89110AE":"shorten","A89127SG":"awaiting","A89137LB":"awaiting","A89153LR":"awaiting","A89172SA":"awaiting","A89190VS":"awaiting","A89203SA":"awaiting","A89235PC":"awaiting","A89257DD":"awaiting","A89278ZL":"awaiting","A89340JL":"awaiting","A89343PD":"awaiting","A89357GA":"awaiting","A89376YM":"awaiting","A89386BB":"awaiting","A89450SF":"awaiting","A89470ZY":"awaiting","A89501ET":"awaiting","A89517SB":"awaiting","A89540AK":"awaiting","A89607TY":"awaiting","A89613CR":"awaiting","A89617AK":"awaiting","A89646MS":"awaiting","A89658DB":"awaiting","A89681AB":"awaiting","A89688MB":"awaiting","A89698BN":"awaiting","A89712CG":"awaiting","A89842TS":"awaiting","A89863LM":"awaiting","A89873HG":"awaiting","A89878SG":"awaiting","A89942TK":"awaiting","A89982AS":"awaiting","A89986YH":"awaiting","A89990AT":"awaiting","A90002SM":"awaiting","A90038TM":"awaiting","A90043JS":"awaiting","A90047TS":"awaiting","A90066KA":"awaiting","A90071YW":"awaiting","A90090GB":"awaiting","A90093MA":"awaiting","A90097TT":"awaiting","A90122HK":"awaiting","A90130NM":"awaiting","A90142DG":"awaiting","A90165KY":"awaiting","A90173AY":"awaiting","A90188CC":"awaiting","A90196MP":"awaiting","A90201IV":"awaiting","A90206MS":"awaiting","A90215HD":"awaiting","A90241CD":"awaiting","A90246JH":"awaiting","A90253UH":"awaiting","A90286LS":"awaiting","A90341GW":"awaiting","A90346LW":"awaiting","A90361KP":"awaiting","A90378JB":"awaiting","A90380JF":"awaiting","A90403CR":"awaiting","A90418YS":"awaiting","A90421KK":"awaiting","A90458GT":"awaiting","A90462AG":"awaiting","A90497TO":"awaiting","A90545AP":"awaiting","A90566VO":"awaiting","A90576GS":"awaiting","A90583JH":"awaiting","A90623JH":"awaiting","A90686MA":"awaiting","A90710MS":"awaiting","A90711AL":"awaiting","A90738MC":"awaiting","A90755RL":"awaiting","A90768AM":"awaiting","A90856SY":"awaiting","A90872SB":"awaiting","A91561EM":"awaiting","A90517AR":"pending","A81708JP":"pending","A82403EP":"pending","A83040SO":"pending","A83860TB":"checking","A84061RC":"pending","A84707DF":"pending","A84722SZ":"pending","A85033AA":"pending","A85137VD":"pending","A85587HW":"pending","A86068XW":"pending","A86097TN":"pending","A86126DY":"pending","A86242AR":"pending","A87672SL":"pending","A88240CC":"pending","A88402TY":"pending","A88593MT":"pending","A89655MG":"pending","A89722BB":"pending","A89732JL":"pending","A90132JM":"checking","A90266DR":"pending","A90276AM":"pending","A90437YT":"pending","A90610KH":"pending","A89553AS":"withdrawn","A89816MT":"withdrawn","A89181LR":"shorten_noresp"};
+const S = {
+  complete:{tone:'ok',label:'Complete',title:'We have everything we need.',body:'Your manuscript and response to reviewers are on file, and the manuscript is within the 10-page limit. No action is needed. We will write only if the template check finds something to correct.'},
+  needresp:{tone:'warn',label:'Action needed',title:'Response to reviewers missing.',body:'Your manuscript is on file and within the 10-page limit, but we do not have your response to reviewers. Please send a point-by-point document by Friday, 27 November 2026.'},
+  shorten:{tone:'warn',label:'Action needed',title:'Manuscript is over the 10-page limit.',body:'Your files are on file, but the manuscript is longer than 10 pages. Please send a version of 10 pages or fewer, as PDF plus source, by Friday, 27 November 2026. If you have already sent it after the date at the top of this page, no further action is needed.'},
+  shorten_noresp:{tone:'warn',label:'Action needed',title:'Over the 10-page limit, and response to reviewers missing.',body:'Please send a manuscript of 10 pages or fewer (PDF plus source) together with a point-by-point response to reviewers by Friday, 27 November 2026.'},
+  awaiting:{tone:'wait',label:'Waiting for your files',title:'We have not received your final files yet.',body:'If you wish to publish in Procedia, please send the final manuscript (10 pages or fewer, in the template, PDF plus source) and the response to reviewers by Friday, 27 November 2026. Papers without files by the deadline cannot be included.'},
+  checking:{tone:'idle',label:'Being checked',title:'Your files are on file and are being checked.',body:'We received files for this paper and are verifying them by hand. No action is needed now. We will write to you if anything is missing.'},
+  pending:{tone:'idle',label:'Reply pending',title:'We have your message and will reply individually.',body:'Your correspondence about this paper is on file and needs a decision from the editorial team. You do not need to write again.'},
+  withdrawn:{tone:'idle',label:'Withdrawn',title:'Recorded as withdrawn at the authors’ request.',body:'This paper will not appear in the Procedia issue. If this is a mistake, please write to us with your paper number as soon as possible.'},
+  undelivered:{tone:'stop',label:'Email undeliverable',title:'Our email to the corresponding author bounced.',body:'We could not reach the address we have for this paper. Please write to us from a working address, with your paper number, so that we can send you the instructions.'}
+};
+const form=document.getElementById('form'), input=document.getElementById('pid'), out=document.getElementById('result');
+function el(tag,cls,text){const e=document.createElement(tag); if(cls) e.className=cls; if(text!==undefined) e.textContent=text; return e;}
+function show(raw){
+  const id=(raw||'').toUpperCase().replace(/[^A-Z0-9?]/g,'');
+  out.replaceChildren(); out.hidden=false;
+  if(!/^A\d{5}[A-Z?]{2}$/.test(id)){ out.append(el('span','pill t-stop','Check the number'), el('p',null,'A paper number looks like A12345AB: the letter A, five digits, then two letters.')); return; }
+  const key=DATA[id];
+  if(!key){ out.append(el('span','pid',id), el('span','pill t-idle','Not in the Procedia list'), el('p',null,'This number is not among the papers in the Procedia process. See “My paper number is not found” below.')); return; }
+  const s=S[key]; out.append(el('span','pid',id), el('span','pill t-'+s.tone,s.label), el('h3',null,s.title), el('p',null,s.body));
+}
+form.addEventListener('submit',e=>{e.preventDefault(); show(input.value);});
+const groups=[['Waiting for author files','wait',['awaiting']],['Revision requested','warn',['shorten','shorten_noresp','needresp']],['Complete','ok',['complete']],['Being checked or reply pending','idle',['checking','pending']],['Withdrawn','idle',['withdrawn']],['Email undeliverable','stop',['undelivered']]];
+const counts={}; Object.values(DATA).forEach(k=>counts[k]=(counts[k]||0)+1);
+const max=Math.max(...groups.map(g=>g[2].reduce((a,k)=>a+(counts[k]||0),0)));
+const gl=document.getElementById('glance');
+groups.forEach(([name,tone,keys])=>{ const n=keys.reduce((a,k)=>a+(counts[k]||0),0); const row=el('div','bar'); const tr=el('div','track'); const f=el('div','fill f-'+tone); f.style.width=Math.max(1.5,100*n/max)+'%'; tr.append(f); row.append(el('span',null,name),tr,el('span','n',String(n))); gl.append(row); });
+document.getElementById('copy').addEventListener('click',async e=>{ const t=document.getElementById('addr').textContent, b=e.currentTarget; try{ await navigator.clipboard.writeText(t); b.textContent='Copied'; }catch(err){ const r=document.createRange(); r.selectNodeContents(document.getElementById('addr')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent='Selected'; } setTimeout(()=>b.textContent='Copy',1800); });
+</script>
+
+</body>
+</html>
